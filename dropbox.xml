@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5.0" method="upgrade">
-	<name>Asta Dropbox</name>
+	<name>Dropbox</name>
 	<creationDate>10 June 2012</creationDate>
 	<author>Alasdair Stalker</author>
 	<authorEmail>alasdair@asta.org.uk</authorEmail>
