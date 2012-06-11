@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="dropboxkeys"
+		label="COM_DROPBOX_KEYS"
+		description="COM_DROPBOX_KEYS_DESCRIPTION"
+	>
+		<field 
+			name="consumerkey" 
+			type="text" 
+			size="80"
+            label="COM_DROPBOX_CONSUMERKEY_TITLE"
+			description="COM_DROPBOX_CONSUMERKEY_TITLE" 
+		/>
+		<field 
+			name="consumersecret" 
+			type="text" 
+			size="80"
+            label="COM_DROPBOX_CONSUMERSECRET_TITLE"
+			description="COM_DROPBOX_CONSUMERSECRET_TITLE" 
+		/>		
+	</fieldset>
+</config>
