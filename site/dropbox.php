@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		0.1 view.html.php
+ * @version		0.1 dropbox.php
  * @package		Asta Dropbox
  * @copyright	Copyright 2012 Alasdair Stalker - All rights reserved.
  * @license		GNU/GPL
