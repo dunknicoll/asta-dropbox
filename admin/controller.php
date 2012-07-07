@@ -23,9 +23,14 @@ class DropboxController extends JController
 	 */
 	function display($cachable = false) 
 	{
-
+		require_once JPATH_COMPONENT.'/helpers/dropbox.php';
+		
 		JRequest::setVar('view', JRequest::getCmd('view', 'home'));
  
+		// Load the submenu.
+		DropboxHelper::addSubmenu(JRequest::getCmd('view', 'banners'));
+
+
 		parent::display($cachable);
 	}
 }

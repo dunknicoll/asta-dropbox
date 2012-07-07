@@ -38,24 +38,31 @@ class DropboxViewHome extends JView
 			$document->addStyleSheet('/components/com_dropbox/css/main.css');
 			
 			$this->params = JComponentHelper::getParams('com_dropbox');
-			$this->dropbox = $model->getDropbox();
-
-			$browse = str_replace("%2F", "/", rawurlencode(JRequest::getVar('browse'))); ;
-			if ($browse=='')
-				$browse='/';
-			
-			$this->breadcrumbs = explode('/',$browse);
-
-			$this->files = $this->dropbox->getMetaData( $browse );	//get the file details from dropbox
-			if ($this->files['error']!='')
-				JError::raiseWarning(100, $this->files['error']);
-
-			array_shift($this->breadcrumbs); //remove the empty root value
-
-			foreach ($this->breadcrumbs as $crumb)
+			if (!$model->checkParams())
 			{
-				if ($crumb!='')
-					$pathway->addItem($crumb, 'index.php?option=com_dropbox&task=browse&amp;browse='.$path);
+				JError::raiseWarning(500, 'Error: Please set the Dropbox keys');
+			}
+			else
+			{	
+				$this->dropbox = $model->getDropbox();
+
+				$browse = str_replace("%2F", "/", rawurlencode(JRequest::getVar('browse'))); ;
+				if ($browse=='')
+					$browse='/';
+				
+				$this->breadcrumbs = explode('/',$browse);
+
+				$this->files = $this->dropbox->getMetaData( $browse );	//get the file details from dropbox
+				if ($this->files['error']!='')
+					JError::raiseWarning(100, $this->files['error']);
+
+				array_shift($this->breadcrumbs); //remove the empty root value
+
+				foreach ($this->breadcrumbs as $crumb)
+				{
+					if ($crumb!='')
+						$pathway->addItem($crumb, 'index.php?option=com_dropbox&task=browse&amp;browse='.$path);
+				}
 			}
 		}
 		parent::display($tpl);

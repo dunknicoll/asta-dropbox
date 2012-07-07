@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		0.1 home.php
+ * @version		0.1 view.html.php
  * @package		Asta Dropbox
  * @copyright	Copyright 2012 Alasdair Stalker - All rights reserved.
  * @license		GNU/GPL
@@ -94,6 +94,11 @@ class DropboxModelHome extends JModelItem
 		$this->_db->setQuery($query);
 		return $this->_db->loadObject();
 	}
+
+	public function checkParams()
+	{
+		return $this->_consumerkey!='' && $this->_consumersecret!='';
+	}
 	
 	/**
 	 * Authorize this App with the users Dropbox account. Get and set the Request
@@ -103,7 +108,6 @@ class DropboxModelHome extends JModelItem
 	 */
 	public function getDropbox()
 	{
-
 		require_once JPATH_SITE . '/components/com_dropbox/inc/autoload.php';
 		$oauth = new Dropbox_OAuth_PEAR($this->_consumerkey, $this->_consumersecret);
 

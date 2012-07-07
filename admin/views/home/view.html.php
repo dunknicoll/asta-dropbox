@@ -17,15 +17,19 @@ jimport('joomla.application.component.view');
 class DropboxViewHome extends JView
 {
 	/**
-	 * HelloWorlds view display method
-	 * @return void
+	 * Method to display the view.
+	 *
+	 * @param   string  $tpl  A template file to load. [optional]
+	 *
+	 * @return  mixed  A string if successful, otherwise a JError object.
+	 *
+	 * @since   1.6
 	 */
 	function display($tpl = null) 
 	{
 		
 		$this->addToolBar();
 		
-		// Display the template
 		parent::display($tpl);
 	}
  
