@@ -27,6 +27,7 @@ class DropboxViewHome extends JView
 			$pathway->addItem('Home');
 		
 		$user = JFactory::getUser();
+		$this->params = JComponentHelper::getParams('com_dropbox');
 		if ($user->guest)
 		{	
 			$this->guest = true;
@@ -37,7 +38,6 @@ class DropboxViewHome extends JView
 			$model =& $this->getModel();
 			$document->addStyleSheet('/components/com_dropbox/css/main.css');
 			
-			$this->params = JComponentHelper::getParams('com_dropbox');
 			if (!$model->checkParams())
 			{
 				JError::raiseWarning(500, 'Error: Please set the Dropbox keys');
@@ -52,7 +52,7 @@ class DropboxViewHome extends JView
 				
 				$this->breadcrumbs = explode('/',$browse);
 
-				$this->files = $this->dropbox->getMetaData( $browse );	//get the file details from dropbox
+				$this->files = $this->dropbox->getMetaData($browse);	//get the file details from dropbox
 				if ($this->files['error']!='')
 					JError::raiseWarning(100, $this->files['error']);
 

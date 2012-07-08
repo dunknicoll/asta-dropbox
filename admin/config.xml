@@ -18,6 +18,14 @@
 			size="80"
             label="COM_DROPBOX_CONSUMERSECRET_TITLE"
 			description="COM_DROPBOX_CONSUMERSECRET_TITLE" 
+		/>	
+		<field 
+			name="loggedouttext" 
+			type="text" 
+			size="80"
+            label="COM_DROPBOX_LOGGEDOUT"
+			description="COM_DROPBOX_LOGGEDOUT_DESC"
+			value="COM_DROPBOX_LOGGEDOUT_DESC" 
 		/>		
 	</fieldset>
 </config>

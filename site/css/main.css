@@ -1,20 +1,33 @@
-.asta-dropbox {
-	width: 100%;
+.dropbox-folder, .dropbox-files {
+	clear: left;
+}
+
+.dropbox-folders div{
+	margin:10px 5px;
 	border: 1px solid #ccc;
-	border-collapse: collapse;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	padding: 3px;
+	font-style: italic;
+	margin: 0;
+	padding: 0.5em;
+	font-size: 0.8em;
+	float: left;
 }
 
-.asta-dropbox th{
-  border-bottom: 2px solid #666;
-  padding: 2px;
+.dropbox-files div {
+	margin:10px 5px;
+	border: 1px solid #ccc;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	padding: 3px;
+	font-style: italic;
+	font-size: 0.8em;
+	float: left;
 }
-
-.asta-dropbox tr.odd {
-  background-color: #f0f0f0;
+.dropbox-files p {
+	margin: 0;
+	padding: 0.5em;
 }
-
-.asta-dropbox tr td{
-  border-bottom: 1px solid #ccc;
-  padding: 1px;
-}
-
